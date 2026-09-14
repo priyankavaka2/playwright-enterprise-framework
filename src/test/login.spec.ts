@@ -6,9 +6,9 @@ test('Login test', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
 
-    await page.goto('https://github.com/login');
+    await page.goto('https://practice.expandtesting.com/login');
 
-    await loginPage.login('priyankavaka2', 'Shastadondapati@123');
+    await loginPage.login('practice', 'SuperSecretPassword!');
 
 
     //await expect(loginPage.dashboard).toBeVisible
