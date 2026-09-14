@@ -6,9 +6,9 @@ test('Login test', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
 
-    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+    await page.goto('https://github.com/login');
 
-    await loginPage.login('Admin', 'admin123');
+    await loginPage.login('priyankavaka2', 'Shastadondapati@123');
 
 
     //await expect(loginPage.dashboard).toBeVisible
