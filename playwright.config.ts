@@ -2,7 +2,7 @@ import { defineConfig } from '@playwright/test';
 import { envConfig } from './src/config/environment';
 
 export default defineConfig({
-  testDir: './src/tests',
+  testDir: './src/test',
 
   use: {
     baseURL: envConfig.baseUrl,
