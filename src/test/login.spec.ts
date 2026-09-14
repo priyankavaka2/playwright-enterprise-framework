@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
+import { LoginPage } from '../pages/loginpage';
 
 test('Login test', async ({ page }) => {
 
@@ -10,4 +10,6 @@ test('Login test', async ({ page }) => {
 
     await loginPage.login('Admin', 'admin123');
 
+
+    //await expect(loginPage.dashboard).toBeVisible
 });
