@@ -1,26 +1,23 @@
+import { defineConfig, devices } from '@playwright/test';
 
-export interface EnvironmentConfig {
-  baseUrl: string;
-  apiUrl: string;
-}
+export default defineConfig({
+  testDir: './src/test',
 
-declare const process: {
-  env: Record<string, string | undefined>;
-};
-
-const environment = process.env.TEST_ENV || 'qa';
-
-const environments: Record<string, EnvironmentConfig> = {
-  qa: {
-    baseUrl: 'https://opensource-demo.orangehrmlive.com',
-    apiUrl: 'https://opensource-demo.orangehrmlive.com/api',
+  use: {
+    channel: 'chrome',
+    headless: false,
+    baseURL: 'https://www.saucedemo.com',
+    screenshot: 'only-on-failure',
+    trace: 'on',
   },
-};
 
-if (!environments[environment]) {
-  throw new Error(
-    `Invalid TEST_ENV: ${environment}. Available environments: ${Object.keys(environments).join(', ')}`
-  );
-}
-
-export const envConfig = environments[environment];
+  projects: [
+    {
+      name: 'chrome',
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',
+      },
+    },
+  ],
+});
