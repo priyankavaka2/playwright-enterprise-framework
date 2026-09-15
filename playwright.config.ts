@@ -1,19 +1,23 @@
-import { defineConfig } from '@playwright/test';
-import { envConfig } from './src/config/environment';
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './src/test',
 
   use: {
-    baseURL: envConfig.baseUrl,
-    headless: true,
+    channel: 'chrome',
+    headless: false,
+    baseURL: 'https://www.saucedemo.com',
     screenshot: 'only-on-failure',
-    trace: 'retain-on-failure',
+    trace: 'on',
   },
 
-  workers: 4,
-
-  retries: process.env.CI ? 2 : 0,
-
-  reporter: [['html', { open: 'never' }]],
+  projects: [
+    {
+      name: 'chrome',
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',
+      },
+    },
+  ],
 });
