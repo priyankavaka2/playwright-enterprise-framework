@@ -30,7 +30,9 @@ coverage
 
 # Bower dependency directory (https://bower.io/)
 bower_components
-
+node_modules/
+playwright-report/
+test-results/
 # node-waf configuration
 .lock-wscript
 
