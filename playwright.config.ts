@@ -8,7 +8,7 @@ export default defineConfig({
   headless: !!process.env.CI,
   baseURL: 'https://www.saucedemo.com',
   screenshot: 'only-on-failure',
-  trace: 'on',
+  trace: 'on'
   },
 
   projects: [
