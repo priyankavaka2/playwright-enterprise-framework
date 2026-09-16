@@ -16,4 +16,3 @@ export class AddToCart {
     await this.sauceLabsBackpack.click();
   }
 }
-
