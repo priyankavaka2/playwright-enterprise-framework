@@ -7,8 +7,8 @@ export class AddToCart {
   constructor(page: Page) {
     this.page = page;
 
-    this.sauceLabsBackpack = page.getByTestId(
-      'add-to-cart-sauce-labs-backpack'
+    this.sauceLabsBackpack = page.locator(
+      '[data-test="add-to-cart-sauce-labs-backpack"]'
     );
   }
 
