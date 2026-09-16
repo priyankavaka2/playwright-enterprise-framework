@@ -9,6 +9,7 @@ export default defineConfig({
     baseURL: 'https://www.saucedemo.com',
     screenshot: 'only-on-failure',
     trace: 'on',
+    testIdAttribute: 'data-test',
   },
 
   projects: [

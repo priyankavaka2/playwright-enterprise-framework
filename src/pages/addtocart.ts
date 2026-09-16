@@ -1,19 +1,19 @@
-import { Page , Locator } from "@playwright/test";
+import { Page, Locator } from '@playwright/test';
 
-export class addtocart{
-    readonly page:Page
-    readonly SauseLabsBackpack : Locator
-    readonly addtocart :Locator
+export class AddToCart {
+  readonly page: Page;
+  readonly sauceLabsBackpack: Locator;
 
-    constructor(page:Page){
-        this.page=page;
+  constructor(page: Page) {
+    this.page = page;
 
-      this.SauseLabsBackpack= page.getByText("Sause Labs Backpack");
-      this.addtocart=page.getByRole('button' ,{name: 'add to cart'})
+    this.sauceLabsBackpack = page.getByTestId(
+      'add-to-cart-sauce-labs-backpack'
+    );
+  }
 
-    }
-    async cart(SauseLabsBackpack:string)
-{
-        await this.addtocart.click();
+  async addProductToCart() {
+    await this.sauceLabsBackpack.click();
+  }
 }
-}
+
